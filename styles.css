@@ -343,6 +343,7 @@ section {
 }
 
 /* Grid de imágenes */
+/* Grid de imágenes */
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -350,123 +351,33 @@ section {
   gap: 1rem;
 }
 
+/* Contenedor de cada foto */
 .image-slot {
   position: relative;
-  background: var(--border);
-  border: 1px dashed #333;
   border-radius: 4px;
   overflow: hidden;
-  cursor: pointer;
-  transition: border-color var(--transition), background var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.5rem;
+  background: var(--border); /* Fondo por si la imagen tarda en cargar */
 }
 
+/* Hace que la primera imagen destaque (ocupa 2 columnas y 2 filas) */
 .image-slot:first-child {
   grid-column: span 2;
   grid-row: span 2;
 }
 
-.image-slot:hover {
-  border-color: var(--accent);
-  background: #1a1a1a;
-}
-
-.image-slot .slot-icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 1.5px solid var(--muted);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color var(--transition);
-}
-
-.image-slot:hover .slot-icon {
-  border-color: var(--accent);
-}
-
-.image-slot .slot-icon svg {
-  width: 1.2rem;
-  height: 1.2rem;
-  stroke: var(--muted);
-  transition: stroke var(--transition);
-}
-
-.image-slot:hover .slot-icon svg {
-  stroke: var(--accent);
-}
-
-.slot-text {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  transition: color var(--transition);
-}
-
-.image-slot:hover .slot-text {
-  color: var(--accent);
-}
-
-.image-slot input[type="file"] {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  cursor: pointer;
-}
-
+/* Estilos de la imagen para que llene el recuadro perfecto sin deformarse */
 .image-slot img {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: none;
-}
-
-.image-slot.has-image .slot-icon,
-.image-slot.has-image .slot-text {
-  display: none;
-}
-
-.image-slot.has-image img {
   display: block;
+  transition: transform 0.3s ease; /* Prepara la imagen para una animación fluida */
 }
 
-.image-slot .remove-btn {
-  display: none;
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: rgba(11, 11, 11, 0.85);
-  border: none;
-  border-radius: 50%;
-  width: 1.8rem;
-  height: 1.8rem;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: var(--text);
-  font-size: 1rem;
-  z-index: 2;
-  transition: background var(--transition);
+/* Efecto opcional y elegante: zoom suave al pasar el mouse */
+.image-slot:hover img {
+  transform: scale(1.05);
 }
-
-.image-slot.has-image .remove-btn {
-  display: flex;
-}
-
-.remove-btn:hover {
-  background: rgba(200, 255, 0, 0.2);
-  color: var(--accent);
-}
-
 /* ====== SECCIÓN REFERENTES ====== */
 
 #referentes .section-inner {
