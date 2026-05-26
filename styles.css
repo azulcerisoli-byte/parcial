@@ -573,70 +573,97 @@ section {
 }
 
 /* ====== FOOTER ====== */
+/* ====== FOOTER ====== */
 
 footer {
-  margin-top: 0;
   border-top: 1px solid var(--border);
   padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footer-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
+  padding-bottom: 2rem;
 }
 
 .footer-brand {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--text);
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
 .footer-brand span {
   color: var(--accent);
 }
 
-.footer-copy {
+.footer-tagline {
+  font-family: var(--font-body);
   font-size: 0.78rem;
+  font-weight: 400;
   color: var(--muted);
   letter-spacing: 0.05em;
+  text-transform: none;
+  max-width: none;
 }
 
-.social-links {
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+}
+
+.footer-license {
   display: flex;
+  align-items: center;
   gap: 1rem;
-  align-items: center;
+  padding-top: 1.75rem;
+  flex-wrap: wrap;
 }
 
-.social-link {
+.cc-icons {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 2.6rem;
-  height: 2.6rem;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+  gap: 0.3rem;
+  flex-shrink: 0;
 }
 
-.social-link:hover {
-  border-color: var(--accent);
-  background: rgba(200, 255, 0, 0.07);
-  transform: translateY(-3px);
-  opacity: 1;
-}
-
-.social-link svg {
-  width: 1.1rem;
-  height: 1.1rem;
+.cc-icons svg {
   fill: var(--muted);
-  transition: fill var(--transition);
+  opacity: 0.7;
 }
 
-.social-link:hover svg {
-  fill: var(--accent);
+.license-text {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: none;
+}
+
+.license-text a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border);
+  transition: color var(--transition), text-decoration-color var(--transition);
+}
+
+.license-text a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+  opacity: 1;
 }
 
 /* ====== ANIMACIONES DE ENTRADA ====== */
