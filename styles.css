@@ -580,7 +580,6 @@ footer {
   padding: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .footer-top {
@@ -613,7 +612,6 @@ footer {
   font-size: 0.78rem;
   font-weight: 400;
   color: var(--muted);
-  letter-spacing: 0.05em;
   text-transform: none;
   max-width: none;
 }
@@ -636,7 +634,6 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  flex-shrink: 0;
 }
 
 .cc-icons svg {
@@ -665,6 +662,42 @@ footer {
   text-decoration-color: var(--accent);
   opacity: 1;
 }
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.social-link:hover {
+  border-color: var(--accent);
+  background: rgba(200, 255, 0, 0.07);
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+.social-link svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: var(--muted);
+  transition: fill var(--transition);
+}
+
+.social-link:hover svg {
+  fill: var(--accent);
+}
+
 
 /* ====== ANIMACIONES DE ENTRADA ====== */
 
